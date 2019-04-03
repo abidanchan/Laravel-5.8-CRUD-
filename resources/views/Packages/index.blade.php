@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
 <div class='col-md'>
-	<h1>Welcome to CRUD INDE</h1>
+	
 </div>
    <br>
     @if (Session::get('success'))
@@ -9,6 +9,7 @@
             <p>{{ Session::get('success') }}</p>
         </div>
     @endif
+    <a href="{{ route('packages.create') }}" class="btn" style="">Create New Package</a>
   <div class="table-responsive">
         <table class="table table-bordered table-hover table-striped">
             <thead>
@@ -19,10 +20,6 @@
                     <th>Content</th>
                 </tr>
             </thead>
-         
-
-
-
              <tbody>
                 @foreach($packages as $key => $package)
                 <tr>

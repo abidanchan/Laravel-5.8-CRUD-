@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Packages;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('Packages.index');
+        $packages = Packages::paginate(3);
+        return view('Packages.index', ['packages' => $packages]);
     }
 }
